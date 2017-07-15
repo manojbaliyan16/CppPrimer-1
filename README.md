@@ -1,2 +1,2 @@
 # CppPrimer
-Here I am Trying to sole the prolem from C++ primer book
+Here I am Trying to solve the prolem from C++ primer book
