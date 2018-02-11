@@ -1,0 +1,8 @@
+
+
+using namespace std;
+
+using->directive-> This Using Directive make all names in namespace available 
+<< -> operator Overloading -> Same OPerator having different meaning 
+
+
