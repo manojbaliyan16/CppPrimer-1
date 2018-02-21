@@ -283,3 +283,83 @@ C++11 -- create and initialize array object
 array<double, 4> a3 = {3.14, 2.72, 1.62, 1.41};
 array<double, 4> a4;
 a4 = a3; // valid for array objects of same size
+
+
+
+// Static Binding and Dynamic Binding for an Array :
+
+
+int arr[10] // static Binding size is fixed at compile time 
+
+int size ;
+cin >> size;
+
+int *arr = new int[size]; // dynamic binding; Size is fxed at run time
+
+
+delet [] arr ; 
+
+
+
+// Example :
+
+
+struct things {
+
+
+	int good;
+	int bad;
+};
+
+
+things struct1={3,100};
+
+things *pt = &struct1;
+
+
+cout << struct1.good ;  -> 3
+cout << struct1.bad ; -> 100
+
+
+cout << pt->good; ->3;
+
+
+
+// Chapter 5 : Loop 
+
+
+C++11 Range Based For Loop :
+
+
+
+	double prices[5]={4.99,1.98,5.96,3.25,4.12};
+
+	for (double x:prices){
+		cout << x << std::endl;
+	}
+
+	// Here x represents the first Number of prices after displaying the First Element it goes for 2nd and 3rd and soonnn...
+
+
+
+	// This loop will print the every value in the range of the array
+
+
+	If you want to Modify array Values in that case you want 
+
+
+	for(double &x:price){
+		x=x*0.80;
+
+	}
+
+	The Range based for loop can be used for the Initialization:
+
+
+	for(int x:{3,2,5,6})
+		cout << x << "";
+
+
+
+
+	
