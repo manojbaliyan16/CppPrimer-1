@@ -361,5 +361,198 @@ C++11 Range Based For Loop :
 
 
 
+// Chapter 7 :
+
+
+	sizeof array Name yields the size of the whole array in to bytes 
+
+
+	like &arrName: will represents the address of the Whole array
+
+
+
+	// Array Value shold not be altering 
+
+
+	void show_array(const double ar[], int n);-> Pointer ar points to the const data means we can use the value like ar[0] but we cann't change 
+	the value 
+
+	it does not mean that ar is having the constant value it means that function show_array does not allow you to alter the value of ar
+
+
+
+	// Function using Array range :
+
+
+
+	Const and Pointer :
+
+
+	We can use const with poniter as belwo ways:
+
+	1: The first way : a pointer ponits to te const object : That prevents from using the poniter to pointed value:
+
+	2nd Way is to make the pointer itself constant and prevents us to canging where the pointer points: 
+
+
+
+	int age=39;
+
+	const int *pt=&age;
+
+
+	pt points to a const int 39 in this case so we can't use pt to change the value 
+
+
+	pt* += 1; // Invalid 
+
+
+	Here imp points is that we can't change the age value using pointer but we can change the value of age itself 
+
+	*pt=20;//invalid 
+	but 
+	age = 20 ; //validf 
+
+
+
+	const float g_earth =9.80;
+	const float *pe = &g_earth;//valid niether *pe nor g_earth can be used to change the value of g_earth;
+
+
+	but 
+
+	const float g_moon = 1.63;
+
+	float *ptr=  & g_moon;; //Invalid
+
+
+	// Suppose we are having a array of const data 
+
+	const int months[12]= {31,28,31,30,31,30,31,31,30,31,30,31};
+
+
+
+	int sum(int arr[], int n)// Not allowed eventhough this should be like const int arr[]
+
+
+
+	// Using Const: 
+	1. Const protect me against programmming error 
+	2. using const allows a function to process both const and Non Const data 
+	where a fucntion that omits  non const argument in accept only non const data
+
+
+	int age = 39 ;
+
+	const int *pt = &age; // A pointer to const int
 
 	
+
+	int *const pt=&age; // A const Pointer to int 
+	here we can alter the value of age but pt can't point t any other location 
+
+
+	using poiter to declation means function can not alter the value in any array that is passed to 
+
+
+	int candy =16;
+	int chips =20;
+
+
+	const int * ptr = &candy;
+	so if *ptr =20 ; it is not allowed
+	but ptr =&chips it is allowed 
+
+
+	and int *const ptr =&chips;
+	*ptr = 16; it is allowed but ptr = & candy ;; not allowed
+
+
+
+	// Defining the Structure : 
+
+
+	struct travel_time
+	{
+		int hours;
+		int min;
+
+		
+	};
+
+
+travel_time sum(travel_time t1, travel_time t2);
+
+
+//Passing Structure Address :
+ When Calling the funcrion we can pass the address of the structure as (&add_struct)
+
+
+// Function and array Object 
+
+
+ //C++11 array Template class 
+
+
+ std::array(double, 4)expenses;
+
+ void show(std::array<double, 4> da); da is an object
+ void fill(std::array<double, 4> * pa); /// pa a pointer to an object
+
+
+ // Function Pointer : 
+
+
+ Suppose think () is a function and think is the address of this fucntion 
+
+
+ So then :
+
+
+ process(think): // means we are passing tthe address of the funtion as an argument 
+
+
+ and if 
+
+ process(think()) // means we are passing the return value of the function as funcrion argument 
+
+
+ // Declare a pointer to a fucntion 
+
+
+ 1. What type of the fucntion the pointer points :
+
+
+ 2. means we should identify the return value of the function anfd the signatre 
+
+say we are having a fucntion 
+
+double pam(int); 
+now a pointer to this function will be 
+
+
+double (*pf) (int); // pf points to the function which takes one int argument 
+
+pf = pem ; // Pf now points to the pam function 
+
+double x= pam(4) // call pam using funvtion name
+
+double y = (*pf)5 // call pm uising function pointer
+or double y = pf(5);;
+
+
+// Variations on the Theme of Function Pointers
+
+
+const double * f1(const double ar[], int n);
+const double * f2(const double [], int);
+const double * f3(const double *, int);======const double * (*p1)(const double *, int) = f1
+
+
+//Appreciating auto:
+//Simplifying with typedef:
+
+
+typedef double real; // makes real another name for double
+
+
